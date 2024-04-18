@@ -1,23 +1,60 @@
-/* src/styles.css */
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
   margin: 0;
-  padding: 0;
+  padding: 20px;
+}
+
+h1,
+h2,
+h3,
+p {
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #1c1c1c;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #007bff;
+}
+
+.search {
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid red;
+  border-radius: 5px;
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  ::placeholder {
+    color: #fff;
+    opacity: 0.6;
+  }
 }
 
 .container {
   display: flex;
-  justify-content: space-around;
-  margin: 10px;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .container > div {
   flex: 1;
   padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin: 10px;
 }
 
 ul {
@@ -26,31 +63,75 @@ ul {
 }
 
 li {
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li .song-details {
+  flex-grow: 1;
+}
+
+h3,
+p {
+  margin: 4px 0;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 5px;
   border: none;
-  background-color: #007bff;
-  color: #fff;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.love-button {
+  background-color: red;
+  color: #fff;
+}
+
+.remove-button {
+  background-color: transparent;
+  color: #fff;
 }
 
 button:hover {
-  background-color: #0056b3;
+  opacity: 0.8;
+}
+
+select {
+  padding: 6px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid red;
+  background-color: #1c1c1c;
+  cursor: pointer;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    align-items: center;
   }
 
   .container > div {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .search {
+    margin-top: 10px;
+    width: 100%;
   }
 }
